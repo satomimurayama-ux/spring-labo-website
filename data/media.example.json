@@ -1,0 +1,11 @@
+[
+  {
+    "date": "2026-07-20",
+    "category": "テレビ",
+    "media": "◯◯テレビ",
+    "title": "（記入例）番組名・特集タイトル",
+    "summary": "（記入例）出演・掲載内容の概要をここに記載します。",
+    "thumbnail": "images/media/media01.jpg",
+    "link": "#"
+  }
+]
