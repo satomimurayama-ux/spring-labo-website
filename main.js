@@ -43,6 +43,35 @@
     });
   });
 
+  /* ---- Radial services diagram ---- */
+  const radialNodes = document.querySelectorAll('.radial-node');
+  const serviceDetail = document.getElementById('serviceDetail');
+  radialNodes.forEach(node => {
+    node.addEventListener('click', () => {
+      const wasActive = node.classList.contains('is-active');
+      const targetId = node.getAttribute('aria-controls');
+      radialNodes.forEach(other => {
+        other.classList.remove('is-active');
+        other.setAttribute('aria-expanded', 'false');
+      });
+      document.querySelectorAll('.service-detail-panel').forEach(panel => {
+        panel.classList.remove('is-active');
+      });
+      if (!wasActive) {
+        node.classList.add('is-active');
+        node.setAttribute('aria-expanded', 'true');
+        const panel = document.getElementById(targetId);
+        if (panel) {
+          panel.classList.add('is-active');
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+      if (serviceDetail) {
+        serviceDetail.classList.toggle('has-active', document.querySelector('.radial-node.is-active') !== null);
+      }
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
