@@ -457,8 +457,8 @@ section { position: relative; }
 
 .greeting-wrap p {
   font-size: 15px;
-  font-weight: 300;
-  color: rgba(43,52,44,0.86);
+  font-weight: 400;
+  color: var(--ink);
   margin-bottom: 32px;
 }
 
