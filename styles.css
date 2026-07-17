@@ -446,6 +446,45 @@ section { position: relative; }
 
 .media-link { display: inline-block; }
 
+/* ---------- Greeting block ---------- */
+.greeting-block {
+  padding: 100px 0 140px;
+}
+
+.greeting-wrap {
+  max-width: 760px;
+}
+
+.greeting-wrap p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(43,52,44,0.86);
+  margin-bottom: 32px;
+}
+
+.greeting-wrap p:last-child { margin-bottom: 0; }
+
+.greeting-pledge {
+  font-family: "Shippori Mincho", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.greeting-signature {
+  text-align: right;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+@media (max-width: 700px) {
+  .greeting-block { padding: 72px 0 100px; }
+  .greeting-wrap p { font-size: 14.5px; }
+}
+
 /* ---------- Coming soon block (placeholder pages) ---------- */
 .coming-soon {
   padding: 100px 0 160px;
