@@ -26,6 +26,23 @@
     a.addEventListener('click', () => document.body.classList.remove('menu-open'));
   });
 
+  /* ---- Services accordion ---- */
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  accordionItems.forEach(item => {
+    const trigger = item.querySelector('.accordion-trigger');
+    trigger.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      accordionItems.forEach(other => {
+        other.classList.remove('is-open');
+        other.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
