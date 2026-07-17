@@ -189,17 +189,5 @@
   modalBackdrop.addEventListener('click', closeModal);
 
   /* ---- Init ---- */
-  const hubMark = document.getElementById('businessHubMark');
-  if (hubMark) {
-    hubMark.innerHTML =
-      '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" ' +
-      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      '<path d="M8 30c2.5-2.5 5 2.5 7.5 0s5-2.5 7.5 0 5-2.5 7.5 0 5-2.5 7.5 0"/>' +
-      '<path d="M14 21c-2-2.5 1.5-4 0-7"/>' +
-      '<path d="M24 21c-2-2.5 1.5-4 0-7"/>' +
-      '<path d="M34 21c-2-2.5 1.5-4 0-7"/>' +
-      '</svg>';
-  }
-
   fetchBusinessData().then(render);
 })();
