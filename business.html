@@ -45,198 +45,33 @@
   </div>
 </header>
 
-<!-- ---------- Page Hero ---------- -->
-<section class="page-hero page-hero--radial">
+<!-- ---------- Business hub ---------- -->
+<section class="business-hub" id="business">
   <div class="wrap">
-    <div class="radial-diagram radial-diagram--hero">
-      <div class="radial-hub radial-hub--text">
-        <p class="section-eyebrow">Our Business</p>
-        <h1>事業紹介</h1>
+    <div class="business-diagram" id="businessDiagram">
+      <div class="business-hub-center reveal">
+        <div class="business-hub-mark" id="businessHubMark"></div>
+        <p class="business-hub-eyebrow">Our Business</p>
+        <h1 class="business-hub-title">事業紹介</h1>
+        <p class="business-hub-desc">温泉の価値を引き出し、地域・施設・企業の課題解決を総合的にサポートします。</p>
       </div>
-
-      <button type="button" class="radial-node" style="--i:0" aria-expanded="false" aria-controls="service-detail-1" id="radial-trigger-1" aria-label="泉質評価・販促支援">
-        <span class="radial-icon" aria-hidden="true">♨️</span>
-        <span class="radial-title" aria-hidden="true">泉質評価・販促支援</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:1" aria-expanded="false" aria-controls="service-detail-2" id="radial-trigger-2" aria-label="温泉地活性化コンサルティング">
-        <span class="radial-icon" aria-hidden="true">🏞️</span>
-        <span class="radial-title" aria-hidden="true">温泉地活性化コンサルティング</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:2" aria-expanded="false" aria-controls="service-detail-3" id="radial-trigger-3" aria-label="浴場・施設プロデュース">
-        <span class="radial-icon" aria-hidden="true">🛁</span>
-        <span class="radial-title" aria-hidden="true">浴場・施設プロデュース</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:3" aria-expanded="false" aria-controls="service-detail-4" id="radial-trigger-4" aria-label="ウェルネスプログラム開発">
-        <span class="radial-icon" aria-hidden="true">🌿</span>
-        <span class="radial-title" aria-hidden="true">ウェルネスプログラム開発</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:4" aria-expanded="false" aria-controls="service-detail-5" id="radial-trigger-5" aria-label="温泉ツアー・地域体験">
-        <span class="radial-icon" aria-hidden="true">🎒</span>
-        <span class="radial-title" aria-hidden="true">温泉ツアー・地域体験</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:5" aria-expanded="false" aria-controls="service-detail-6" id="radial-trigger-6" aria-label="商品開発・監修">
-        <span class="radial-icon" aria-hidden="true">🧴</span>
-        <span class="radial-title" aria-hidden="true">商品開発・監修</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:6" aria-expanded="false" aria-controls="service-detail-7" id="radial-trigger-7" aria-label="講演・研修・人材育成">
-        <span class="radial-icon" aria-hidden="true">🎤</span>
-        <span class="radial-title" aria-hidden="true">講演・研修・人材育成</span>
-      </button>
-
-      <button type="button" class="radial-node" style="--i:7" aria-expanded="false" aria-controls="service-detail-8" id="radial-trigger-8" aria-label="PR・事業支援">
-        <span class="radial-icon" aria-hidden="true">📣</span>
-        <span class="radial-title" aria-hidden="true">PR・事業支援</span>
-      </button>
+      <!-- 8 business cards are rendered here by business.js from data/businesses.json -->
     </div>
   </div>
 </section>
 
-<!-- ---------- Services ---------- -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="section-desc">温泉の価値を最大限に引き出し、地域・宿泊施設・企業の課題解決を総合的にサポートします。</p>
-    </div>
-
-    <div class="service-detail" id="serviceDetail">
-      <p class="service-detail-hint" id="serviceDetailHint">円をクリックすると、詳細が表示されます</p>
-
-      <div class="service-detail-panel" id="service-detail-1" role="region" aria-labelledby="radial-trigger-1">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">♨️</span>
-            <h2 class="service-detail-title">泉質評価・販促支援</h2>
-          </div>
-          <ul>
-            <li>泉質の評価・分析</li>
-            <li>泉質のわかりやすい解説</li>
-            <li>販促ツール制作</li>
-            <li>館内POPやパンフレット制作</li>
-            <li>温泉の魅力を伝えるコンテンツ制作</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-2" role="region" aria-labelledby="radial-trigger-2">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🏞️</span>
-            <h2 class="service-detail-title">温泉地活性化コンサルティング</h2>
-          </div>
-          <ul>
-            <li>温泉地ブランディング</li>
-            <li>地域活性化</li>
-            <li>観光コンテンツ企画</li>
-            <li>自治体・DMOとの連携</li>
-            <li>観光戦略立案</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-3" role="region" aria-labelledby="radial-trigger-3">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🛁</span>
-            <h2 class="service-detail-title">浴場・施設プロデュース</h2>
-          </div>
-          <ul>
-            <li>浴場設計コンサルティング</li>
-            <li>導線設計</li>
-            <li>入浴環境の改善</li>
-            <li>施設コンセプト提案</li>
-            <li>温泉施設の魅力向上</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-4" role="region" aria-labelledby="radial-trigger-4">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🌿</span>
-            <h2 class="service-detail-title">ウェルネスプログラム開発</h2>
-          </div>
-          <ul>
-            <li>ウェルネスツーリズム企画</li>
-            <li>入浴プログラム開発</li>
-            <li>健康コンテンツ造成</li>
-            <li>企業向けウェルネス企画</li>
-            <li>地域資源活用</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-5" role="region" aria-labelledby="radial-trigger-5">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🎒</span>
-            <h2 class="service-detail-title">温泉ツアー・地域体験</h2>
-          </div>
-          <ul>
-            <li>温泉ツアー企画</li>
-            <li>現地同行</li>
-            <li>視察コーディネート</li>
-            <li>インバウンド向け企画</li>
-            <li>地域体験プログラム</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-6" role="region" aria-labelledby="radial-trigger-6">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🧴</span>
-            <h2 class="service-detail-title">商品開発・監修</h2>
-          </div>
-          <ul>
-            <li>温泉化粧品監修</li>
-            <li>入浴剤監修</li>
-            <li>商品企画</li>
-            <li>OEM商品の監修</li>
-            <li>泉質を活かした商品開発</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-7" role="region" aria-labelledby="radial-trigger-7">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">🎤</span>
-            <h2 class="service-detail-title">講演・研修・人材育成</h2>
-          </div>
-          <ul>
-            <li>講演</li>
-            <li>企業研修</li>
-            <li>接遇研修</li>
-            <li>温泉人材育成</li>
-            <li>スタッフ教育</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="service-detail-8" role="region" aria-labelledby="radial-trigger-8">
-        <div class="service-detail-inner">
-          <div class="service-detail-head">
-            <span class="service-detail-icon" aria-hidden="true">📣</span>
-            <h2 class="service-detail-title">PR・事業支援</h2>
-          </div>
-          <ul>
-            <li>ホテル・旅館のPR</li>
-            <li>情報発信</li>
-            <li>人材派遣コンサルティング</li>
-            <li>宿泊施設の事業支援</li>
-            <li>売買・事業承継の情報提供・マッチング</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<!-- ---------- Business modal ---------- -->
+<div class="biz-modal" id="bizModal" hidden>
+  <div class="biz-modal-backdrop" id="bizModalBackdrop"></div>
+  <div class="biz-modal-dialog" id="bizModalDialog" role="dialog" aria-modal="true" aria-labelledby="bizModalTitle">
+    <button type="button" class="biz-modal-close" id="bizModalClose" aria-label="閉じる">&times;</button>
+    <div class="biz-modal-icon" id="bizModalIcon"></div>
+    <p class="biz-modal-number" id="bizModalNumber"></p>
+    <h2 class="biz-modal-title" id="bizModalTitle"></h2>
+    <p class="biz-modal-desc" id="bizModalDesc"></p>
+    <ul class="biz-modal-details" id="bizModalDetails"></ul>
   </div>
-</section>
+</div>
 
 <!-- ---------- Footer ---------- -->
 <footer class="footer" id="contact-footer">
@@ -261,6 +96,7 @@
 </footer>
 
 <script src="main.js"></script>
+<script src="business.js"></script>
 
 </body>
 </html>
