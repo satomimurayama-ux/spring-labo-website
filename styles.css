@@ -333,7 +333,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Page hero (sub pages) ---------- */
 .page-hero {
-  padding: 220px 0 100px;
+  padding: 74px 0 34px;
   text-align: center;
   background: var(--ivory);
   border-bottom: 1px solid var(--line);
@@ -1627,7 +1627,7 @@ body.modal-open { overflow: hidden; }
 
   .scroll-cue { display: none; }
 
-  .page-hero { padding: 150px 0 64px; }
+  .page-hero { padding: 64px 0 24px; }
 
   .section-head { margin-bottom: 48px; }
 
