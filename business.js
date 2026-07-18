@@ -22,17 +22,20 @@
   let lastFocusedEl = null;
 
   /* ---- Accent colors: muted/dusty tones, with a slightly deeper shade
-   * used for the hover / focus border. ---- */
+   * used for the hover / focus border, and an RGB triplet used for the
+   * translucent click glow. ---- */
   const COLORS = {
-    blue: { base: '#7C97A6', dark: '#5F7C8C' },
-    orange: { base: '#C98B57', dark: '#B06F3E' },
-    turquoise: { base: '#6FA8A0', dark: '#52897F' },
-    sage: { base: '#8FA888', dark: '#71906A' },
-    olive: { base: '#9A9A6B', dark: '#7F7F52' },
-    rose: { base: '#C98C93', dark: '#B06E76' },
-    lavender: { base: '#A79BC9', dark: '#8B7DB3' },
-    coral: { base: '#D98C86', dark: '#C46E67' }
+    blue: { base: '#7C97A6', dark: '#5F7C8C', rgb: '124,151,166' },
+    orange: { base: '#C98B57', dark: '#B06F3E', rgb: '201,139,87' },
+    turquoise: { base: '#6FA8A0', dark: '#52897F', rgb: '111,168,160' },
+    sage: { base: '#8FA888', dark: '#71906A', rgb: '143,168,136' },
+    olive: { base: '#9A9A6B', dark: '#7F7F52', rgb: '154,154,107' },
+    rose: { base: '#C98C93', dark: '#B06E76', rgb: '201,140,147' },
+    lavender: { base: '#A79BC9', dark: '#8B7DB3', rgb: '167,155,201' },
+    coral: { base: '#D98C86', dark: '#C46E67', rgb: '217,140,134' }
   };
+
+  const PULSE_DURATION = 700; // ms, matches the bizCardGlow keyframes below
 
   /* ---- Line-icon set: each combines two onsen-inspired motifs, drawn as
    * simple stroked SVG paths so they inherit the card's accent color via
@@ -106,6 +109,7 @@
     card.style.setProperty('--i', index);
     card.style.setProperty('--accent-color', colors.base);
     card.style.setProperty('--accent-color-dark', colors.dark);
+    card.style.setProperty('--accent-color-rgb', colors.rgb);
     card.setAttribute('aria-haspopup', 'dialog');
     card.setAttribute('aria-label', item.title);
 
@@ -122,9 +126,22 @@
     more.textContent = '詳しく見る';
 
     card.append(icon, title, more);
-    card.addEventListener('click', () => openModal(item, card));
+    card.addEventListener('click', () => {
+      pulseCard(card);
+      openModal(item, card);
+    });
 
     return card;
+  }
+
+  /* ---- Soft "poワン" glow pulse on click ---- */
+  function pulseCard(card) {
+    card.classList.remove('is-pulsing');
+    // Force a reflow so re-adding the class restarts the animation
+    // even if the same card is clicked again in quick succession.
+    void card.offsetWidth;
+    card.classList.add('is-pulsing');
+    setTimeout(() => card.classList.remove('is-pulsing'), PULSE_DURATION);
   }
 
   function render(items) {
