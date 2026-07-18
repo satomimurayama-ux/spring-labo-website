@@ -1597,8 +1597,17 @@ body.modal-open { overflow: hidden; }
   .logo img { height: 32px; }
 
   .nav {
+    /* .header has `backdrop-filter` (for the scrolled-state blur), which
+     * makes it the containing block for fixed descendants — inset:0 would
+     * therefore size this against the header's own box, not the viewport,
+     * squashing the drawer to header-height and hiding the logo/icons
+     * beneath it. vw/vh units sidestep that and always resolve against
+     * the viewport. */
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: var(--ivory);
     flex-direction: column;
     justify-content: center;
