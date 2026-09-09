@@ -1570,6 +1570,88 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 40px;
 }
 
+/* ---------- Company ---------- */
+.company-section {
+  padding: 100px 0 130px;
+  background: var(--ivory);
+}
+
+.company-table {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.company-table dl {
+  display: grid;
+}
+
+.company-table dl > div {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.company-table dl > div:last-child {
+  border-bottom: none;
+}
+
+.company-table dt {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.company-table dd {
+  font-size: var(--fs-body);
+  color: rgba(43,52,44,0.82);
+}
+
+.company-table dd a {
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+}
+
+.company-table ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.company-table li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.company-table li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.company-contact {
+  max-width: 720px;
+  margin: 56px auto 0;
+  text-align: center;
+}
+
+.company-contact p {
+  font-size: var(--fs-body);
+  color: rgba(43,52,44,0.76);
+  margin-bottom: 28px;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--ink);
@@ -1683,4 +1765,11 @@ body.modal-open { overflow: hidden; }
   .footer-contact { text-align: left; }
 
   .footer-top { flex-direction: column; }
+
+  .company-section { padding: 72px 0 100px; }
+  .company-table dl > div {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px 0;
+  }
 }
