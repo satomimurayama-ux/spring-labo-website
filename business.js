@@ -21,18 +21,18 @@
 
   let lastFocusedEl = null;
 
-  /* ---- Accent colors: muted/dusty tones, with a slightly deeper shade
+  /* ---- Accent colors: refined business tones, with a slightly deeper shade
    * used for the hover / focus border, and an RGB triplet used for the
    * translucent click glow. ---- */
   const COLORS = {
-    blue: { base: '#7C97A6', dark: '#5F7C8C', rgb: '124,151,166' },
-    orange: { base: '#C98B57', dark: '#B06F3E', rgb: '201,139,87' },
-    turquoise: { base: '#6FA8A0', dark: '#52897F', rgb: '111,168,160' },
-    sage: { base: '#8FA888', dark: '#71906A', rgb: '143,168,136' },
-    olive: { base: '#9A9A6B', dark: '#7F7F52', rgb: '154,154,107' },
-    rose: { base: '#C98C93', dark: '#B06E76', rgb: '201,140,147' },
-    lavender: { base: '#A79BC9', dark: '#8B7DB3', rgb: '167,155,201' },
-    coral: { base: '#D98C86', dark: '#C46E67', rgb: '217,140,134' }
+    blue: { base: '#6f8490', dark: '#556c78', rgb: '111,132,144' },
+    orange: { base: '#b18b5f', dark: '#947047', rgb: '177,139,95' },
+    turquoise: { base: '#6d918a', dark: '#527871', rgb: '109,145,138' },
+    sage: { base: '#87967c', dark: '#6d7c63', rgb: '135,150,124' },
+    olive: { base: '#908a62', dark: '#74704c', rgb: '144,138,98' },
+    rose: { base: '#a76572', dark: '#8a4f5c', rgb: '167,101,114' },
+    lavender: { base: '#8b82a2', dark: '#716783', rgb: '139,130,162' },
+    coral: { base: '#9f5d55', dark: '#7d4640', rgb: '159,93,85' }
   };
 
   const PULSE_DURATION = 700; // ms, matches the bizCardGlow keyframes below
@@ -134,7 +134,7 @@
     return card;
   }
 
-  /* ---- Soft "poワン" glow pulse on click ---- */
+  /* ---- Soft glow pulse on click ---- */
   function pulseCard(card) {
     card.classList.remove('is-pulsing');
     // Force a reflow so re-adding the class restarts the animation
