@@ -486,9 +486,38 @@ section { position: relative; }
   color: var(--ink);
 }
 
+.profile-detail-text + .profile-detail-text {
+  margin-top: 18px;
+}
+
 .profile-detail-placeholder {
   color: rgba(43,52,44,0.45);
   font-style: italic;
+}
+
+.profile-detail-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  font-size: var(--fs-body);
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.profile-detail-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.profile-detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.82em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .profile-detail-tags {
