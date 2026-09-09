@@ -972,6 +972,15 @@ body.modal-open { overflow: hidden; }
   max-width: 760px;
 }
 
+.greeting-company-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-subtitle);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 36px;
+}
+
 .greeting-wrap p {
   font-size: var(--fs-body);
   font-weight: 400;
