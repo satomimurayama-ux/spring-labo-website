@@ -1629,6 +1629,10 @@ body.modal-open { overflow: hidden; }
   gap: 30px;
 }
 
+.form-honey {
+  display: none;
+}
+
 .contact-fieldset {
   border: 0;
 }
