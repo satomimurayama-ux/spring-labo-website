@@ -1083,6 +1083,12 @@ body.modal-open { overflow: hidden; }
   color: var(--accent);
 }
 
+.accordion-icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
 .accordion-text {
   flex: 1;
   min-width: 0;
