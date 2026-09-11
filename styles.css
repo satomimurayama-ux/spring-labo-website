@@ -976,11 +976,11 @@ body.modal-open { overflow: hidden; }
 }
 
 .greeting-company-name {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: var(--fs-subtitle);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
   margin-bottom: 36px;
 }
 
