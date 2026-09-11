@@ -1727,6 +1727,13 @@ body.modal-open { overflow: hidden; }
   resize: vertical;
 }
 
+.privacy-note {
+  margin: -4px 0 -12px;
+  font-size: var(--fs-small);
+  line-height: 1.8;
+  color: var(--muted);
+}
+
 .privacy-check {
   display: flex;
   align-items: center;
