@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260910-3">
+<link rel="stylesheet" href="styles.css?v=20260911-2">
 </head>
 <body>
 
@@ -54,13 +54,79 @@
   </div>
 </section>
 
-<!-- ---------- Coming Soon ---------- -->
-<section class="coming-soon">
-  <div class="wrap">
-    <div class="mark"><img src="images/logo-mark.png" alt=""></div>
-    <p class="label">Coming Soon</p>
-    <p class="text">只今、お問い合わせフォームを準備しております。近日公開予定です。</p>
-    <a href="index.html" class="btn btn-outline" style="color:var(--ink); border-color: var(--line);">ホームに戻る</a>
+<!-- ---------- Contact Form ---------- -->
+<section class="contact-section">
+  <div class="wrap contact-wrap">
+    <p class="contact-lead">取材・メディア出演、講演、温泉施設や商品開発に関するご相談など、お気軽にお問い合わせください。</p>
+
+    <form class="contact-form" action="#" method="post">
+      <fieldset class="contact-fieldset">
+        <legend>お問い合わせ内容</legend>
+        <div class="contact-category-grid">
+          <label class="category-option">
+            <input type="radio" name="category" value="取材・メディア出演" checked>
+            <span>取材・メディア出演</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="講演・セミナー">
+            <span>講演・セミナー</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="温泉施設のご相談">
+            <span>温泉施設のご相談</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="温泉資源・泉質のご相談">
+            <span>温泉資源・泉質のご相談</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="商品・サービス開発">
+            <span>商品・サービス開発</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="協業・提携">
+            <span>協業・提携</span>
+          </label>
+          <label class="category-option">
+            <input type="radio" name="category" value="その他">
+            <span>その他</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-grid">
+        <label>
+          <span>お名前</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          <span>会社名・団体名</span>
+          <input type="text" name="organization" autocomplete="organization">
+        </label>
+        <label>
+          <span>メールアドレス</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>電話番号</span>
+          <input type="tel" name="tel" autocomplete="tel">
+        </label>
+      </div>
+
+      <label class="form-full">
+        <span>お問い合わせ内容</span>
+        <textarea name="message" rows="7" required></textarea>
+      </label>
+
+      <label class="privacy-check">
+        <input type="checkbox" name="privacy" required>
+        <span>個人情報の取り扱いに同意します</span>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">送信する</button>
+      </div>
+    </form>
   </div>
 </section>
 
