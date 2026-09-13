@@ -1000,10 +1000,12 @@ body.modal-open { overflow: hidden; }
 
 .greeting-pledge {
   font-family: var(--font-heading);
-  font-size: var(--fs-subtitle);
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
   font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
   color: var(--ink);
-  padding: 32px 0;
+  padding: 44px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -1021,6 +1023,11 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 700px) {
   .greeting-block { padding: 72px 0 100px; }
   .greeting-wrap p { font-size: var(--fs-body); }
+  .greeting-pledge {
+    font-size: clamp(1.55rem, 7.2vw, 2rem);
+    line-height: 1.85;
+    padding: 38px 0;
+  }
 }
 
 /* ---------- Services (accordion) ---------- */
