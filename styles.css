@@ -935,6 +935,7 @@ body.modal-open { overflow: hidden; }
 }
 
 .br-pc { display: inline; }
+.br-mobile { display: none; }
 
 @media (max-width: 900px) {
   .profile-hero-grid { grid-template-columns: 260px 1fr; gap: 40px; }
@@ -1960,6 +1961,8 @@ body.modal-open { overflow: hidden; }
   }
 
   .hero-sub { font-size: var(--fs-small); }
+
+  .br-mobile { display: inline; }
 
   .scroll-cue { display: none; }
 
