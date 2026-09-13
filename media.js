@@ -1,6 +1,6 @@
 (function () {
   const grid = document.getElementById('mediaGrid');
-  if (!grid) return; // Media section only exists on profile.html
+  if (!grid) return; // Media section only exists on media.html
 
   /* ---- Config ----
    * To move this to a CMS later (microCMS / Contentful / WordPress Headless /

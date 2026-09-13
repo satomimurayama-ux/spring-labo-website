@@ -1003,6 +1003,10 @@ body.modal-open { overflow: hidden; }
   border-bottom: 1px solid var(--line);
 }
 
+.greeting-closing {
+  margin-top: 18px;
+}
+
 .greeting-signature {
   text-align: right;
   font-weight: 400;

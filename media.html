@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>会社概要 | Spring Labo LLC</title>
-<meta name="description" content="スプリングラボ合同会社の会社概要をご紹介します。">
+<title>メディア情報 | Spring Labo LLC</title>
+<meta name="description" content="温泉家・北出恭子のテレビ・ラジオ・新聞・雑誌・Web・YouTube・イベント登壇などのメディア出演・掲載情報をご紹介します。">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -23,9 +23,9 @@
       <a href="index.html">ホーム</a>
       <a href="greeting.html">代表挨拶・プロフィール</a>
       <a href="business.html">事業内容</a>
-      <a href="media.html">メディア情報</a>
+      <a href="media.html" class="is-current">メディア情報</a>
       <a href="https://kitade-onsen.com/" target="_blank" rel="noopener">北出温泉</a>
-      <a href="company.html" class="is-current">会社概要</a>
+      <a href="company.html">会社概要</a>
       <a href="contact.html">お問い合わせ</a>
     </nav>
     <div class="header-right">
@@ -50,47 +50,62 @@
 <!-- ---------- Page Hero ---------- -->
 <section class="page-hero">
   <div class="wrap">
-    <p class="section-eyebrow">Company</p>
-    <h1>会社概要</h1>
+    <p class="section-eyebrow">Media</p>
+    <h1>メディア情報</h1>
   </div>
 </section>
 
-<!-- ---------- Company ---------- -->
-<section class="company-section">
+<!-- ---------- Media Appearances ---------- -->
+<section class="media-section" id="media">
   <div class="wrap">
-    <div class="company-table reveal">
-      <dl>
-        <div>
-          <dt>会社名</dt>
-          <dd>スプリングラボ合同会社</dd>
-        </div>
-        <div>
-          <dt>英文表記</dt>
-          <dd>Spring Labo LLC</dd>
-        </div>
-        <div>
-          <dt>代表</dt>
-          <dd>北出 恭子</dd>
-        </div>
-        <div>
-          <dt>事業内容</dt>
-          <dd>
-            <ul>
-              <li>温泉・温浴施設に関するコンサルティング</li>
-              <li>泉質評価・販促支援</li>
-              <li>温泉地活性化・観光コンテンツ企画</li>
-              <li>浴場・施設プロデュース</li>
-              <li>講演・研修・商品監修</li>
-            </ul>
-          </dd>
-        </div>
-      </dl>
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Media</p>
+      <h2 class="section-title">メディア出演・掲載情報</h2>
+      <p class="section-desc">テレビ・ラジオ・新聞・雑誌・Web・YouTube・イベント登壇など、これまでの出演・掲載情報を随時更新しています。</p>
     </div>
 
-    <div class="company-contact reveal">
-      <p>事業のご相談、講演・監修のご依頼は、お問い合わせフォームよりご連絡ください。</p>
-      <a href="contact.html" class="btn btn-primary">お問い合わせフォームへ</a>
+    <div class="media-filters" role="group" aria-label="カテゴリで絞り込む" id="mediaFilters">
+      <button type="button" class="media-filter-btn is-active" data-category="all" aria-pressed="true">すべて</button>
+      <button type="button" class="media-filter-btn" data-category="テレビ" aria-pressed="false">テレビ</button>
+      <button type="button" class="media-filter-btn" data-category="ラジオ" aria-pressed="false">ラジオ</button>
+      <button type="button" class="media-filter-btn" data-category="新聞" aria-pressed="false">新聞</button>
+      <button type="button" class="media-filter-btn" data-category="雑誌" aria-pressed="false">雑誌</button>
+      <button type="button" class="media-filter-btn" data-category="Web" aria-pressed="false">Web</button>
+      <button type="button" class="media-filter-btn" data-category="YouTube" aria-pressed="false">YouTube</button>
+      <button type="button" class="media-filter-btn" data-category="イベント登壇" aria-pressed="false">イベント登壇</button>
     </div>
+
+    <div class="media-grid" id="mediaGrid" aria-live="polite"></div>
+
+    <p class="media-empty" id="mediaEmpty" hidden>現在、公開しているメディア出演情報はございません。今後の掲載をお楽しみに。</p>
+
+    <div class="media-loadmore" id="mediaLoadMoreWrap" hidden>
+      <button type="button" class="btn btn-outline" id="mediaLoadMoreBtn" style="color:var(--ink); border-color: var(--line);">もっと見る</button>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Media Modal ---------- -->
+<div class="media-modal" id="mediaModal" hidden>
+  <div class="media-modal-backdrop" id="mediaModalBackdrop"></div>
+  <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle">
+    <button type="button" class="media-modal-close" id="mediaModalClose" aria-label="閉じる">&times;</button>
+    <div class="media-modal-image" id="mediaModalImage"></div>
+    <div class="media-modal-body">
+      <p class="media-modal-meta" id="mediaModalMeta"></p>
+      <h2 class="media-modal-title" id="mediaModalTitle"></h2>
+      <p class="media-modal-summary" id="mediaModalSummary"></p>
+      <a class="media-modal-link" id="mediaModalLink" href="#" target="_blank" rel="noopener">関連リンクを見る</a>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- CTA ---------- -->
+<section class="profile-cta">
+  <div class="wrap">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="profile-cta-title">取材・メディア出演・講演・監修の<br class="br-pc">ご相談はこちら</h2>
+    <a href="contact.html" class="btn btn-primary">お問い合わせフォームへ</a>
   </div>
 </section>
 
@@ -119,6 +134,7 @@
 </footer>
 
 <script src="main.js"></script>
+<script src="media.js"></script>
 
 </body>
 </html>
