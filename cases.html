@@ -149,6 +149,34 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+(function () {
+  const cards = Array.from(document.querySelectorAll('.case-card'));
+  const sectionTitle = document.querySelector('.case-section .section-title');
+  const sectionDesc = document.querySelector('.case-section .section-desc');
+  const defaultTitle = sectionTitle ? sectionTitle.textContent : '';
+  const defaultDesc = sectionDesc ? sectionDesc.textContent : '';
+
+  function showSelectedCase() {
+    const selectedId = decodeURIComponent(window.location.hash.replace('#', ''));
+    const selectedCard = cards.find(card => card.id === selectedId);
+
+    cards.forEach(card => {
+      card.hidden = !!selectedCard && card !== selectedCard;
+    });
+
+    if (sectionTitle) {
+      sectionTitle.textContent = selectedCard ? selectedCard.querySelector('h2').textContent : defaultTitle;
+    }
+    if (sectionDesc) {
+      sectionDesc.textContent = selectedCard ? 'このカテゴリーの事例紹介は、現在準備中です。' : defaultDesc;
+    }
+  }
+
+  window.addEventListener('hashchange', showSelectedCase);
+  showSelectedCase();
+})();
+</script>
 
 </body>
 </html>
