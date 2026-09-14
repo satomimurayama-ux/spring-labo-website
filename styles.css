@@ -444,8 +444,16 @@ section { position: relative; }
 .profile-hero-name {
   font-size: var(--fs-page-title);
   font-weight: 600;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7em;
   white-space: nowrap;
   margin-bottom: 10px;
+}
+
+.profile-title-word {
+  display: inline-block;
 }
 
 .profile-hero-role {
@@ -952,7 +960,12 @@ body.modal-open { overflow: hidden; }
     font-size: clamp(2rem, 9vw, 2.55rem);
     line-height: 1.45;
     letter-spacing: 0.02em;
+    display: block;
     white-space: normal;
+  }
+
+  .profile-title-word {
+    display: block;
   }
   .profile-hero-quote { border-left: none; border-top: 2px solid var(--accent); padding-left: 0; padding-top: 16px; }
 
