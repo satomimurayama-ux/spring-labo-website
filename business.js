@@ -7,7 +7,7 @@
    * Notion API, etc.), only fetchBusinessData() needs to change — it just has
    * to keep resolving to an array of items shaped like data/businesses.json.
    */
-  const DATA_URL = 'data/businesses.json';
+  const DATA_URL = 'data/businesses.json?v=20260914-2';
 
   const modal = document.getElementById('bizModal');
   const modalDialog = document.getElementById('bizModalDialog');
@@ -103,15 +103,18 @@
   function buildCard(item, index) {
     const colors = COLORS[item.accentColor] || COLORS.blue;
 
-    const card = document.createElement('button');
-    card.type = 'button';
+    const card = document.createElement('div');
     card.className = 'biz-card';
     card.style.setProperty('--i', index);
     card.style.setProperty('--accent-color', colors.base);
     card.style.setProperty('--accent-color-dark', colors.dark);
     card.style.setProperty('--accent-color-rgb', colors.rgb);
-    card.setAttribute('aria-haspopup', 'dialog');
-    card.setAttribute('aria-label', item.title);
+
+    const detailButton = document.createElement('button');
+    detailButton.type = 'button';
+    detailButton.className = 'biz-card-main';
+    detailButton.setAttribute('aria-haspopup', 'dialog');
+    detailButton.setAttribute('aria-label', item.title);
 
     const icon = document.createElement('span');
     icon.className = 'biz-card-icon';
@@ -125,12 +128,18 @@
     more.className = 'biz-card-more';
     more.textContent = '詳しく見る';
 
-    card.append(icon, title, more);
-    card.addEventListener('click', () => {
+    detailButton.append(icon, title, more);
+    detailButton.addEventListener('click', () => {
       pulseCard(card);
-      openModal(item, card);
+      openModal(item, detailButton);
     });
 
+    const caseLink = document.createElement('a');
+    caseLink.className = 'biz-card-case-link';
+    caseLink.href = item.caseUrl || `cases.html#${item.id}`;
+    caseLink.textContent = '事例紹介';
+
+    card.append(detailButton, caseLink);
     return card;
   }
 
