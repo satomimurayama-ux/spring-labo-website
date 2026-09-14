@@ -7,7 +7,7 @@
    * Notion API, etc.), only fetchBusinessData() needs to change — it just has
    * to keep resolving to an array of items shaped like data/businesses.json.
    */
-  const DATA_URL = 'data/businesses.json?v=20260914-2';
+  const DATA_URL = 'data/businesses.json?v=20260914-3';
 
   const modal = document.getElementById('bizModal');
   const modalDialog = document.getElementById('bizModalDialog');
@@ -18,6 +18,7 @@
   const modalTitle = document.getElementById('bizModalTitle');
   const modalDesc = document.getElementById('bizModalDesc');
   const modalDetails = document.getElementById('bizModalDetails');
+  const modalCaseLink = document.getElementById('bizModalCaseLink');
 
   let lastFocusedEl = null;
 
@@ -103,18 +104,15 @@
   function buildCard(item, index) {
     const colors = COLORS[item.accentColor] || COLORS.blue;
 
-    const card = document.createElement('div');
+    const card = document.createElement('button');
+    card.type = 'button';
     card.className = 'biz-card';
     card.style.setProperty('--i', index);
     card.style.setProperty('--accent-color', colors.base);
     card.style.setProperty('--accent-color-dark', colors.dark);
     card.style.setProperty('--accent-color-rgb', colors.rgb);
-
-    const detailButton = document.createElement('button');
-    detailButton.type = 'button';
-    detailButton.className = 'biz-card-main';
-    detailButton.setAttribute('aria-haspopup', 'dialog');
-    detailButton.setAttribute('aria-label', item.title);
+    card.setAttribute('aria-haspopup', 'dialog');
+    card.setAttribute('aria-label', item.title);
 
     const icon = document.createElement('span');
     icon.className = 'biz-card-icon';
@@ -128,18 +126,11 @@
     more.className = 'biz-card-more';
     more.textContent = '詳しく見る';
 
-    detailButton.append(icon, title, more);
-    detailButton.addEventListener('click', () => {
+    card.append(icon, title, more);
+    card.addEventListener('click', () => {
       pulseCard(card);
-      openModal(item, detailButton);
+      openModal(item, card);
     });
-
-    const caseLink = document.createElement('a');
-    caseLink.className = 'biz-card-case-link';
-    caseLink.href = item.caseUrl || `cases.html#${item.id}`;
-    caseLink.textContent = '事例紹介';
-
-    card.append(detailButton, caseLink);
     return card;
   }
 
@@ -175,6 +166,7 @@
       li.textContent = detail;
       modalDetails.appendChild(li);
     });
+    modalCaseLink.href = item.caseUrl || `cases.html#${item.id}`;
 
     modal.hidden = false;
     document.body.classList.add('modal-open');

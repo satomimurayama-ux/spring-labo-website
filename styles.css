@@ -1349,14 +1349,6 @@ body.modal-open { overflow: hidden; }
   border-radius: 50%;
   background: #fff;
   border: 1.5px solid var(--accent-color);
-  isolation: isolate;
-}
-
-.biz-card-main {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1367,12 +1359,6 @@ body.modal-open { overflow: hidden; }
   cursor: pointer;
   font: inherit;
   color: var(--ink);
-  background: transparent;
-  border: 0;
-  border-radius: inherit;
-}
-
-.biz-card {
   box-shadow: 0 6px 18px rgba(42,37,36,0.06);
   opacity: 0;
   animation: bizCardIn 0.7s ease both;
@@ -1386,20 +1372,19 @@ body.modal-open { overflow: hidden; }
 }
 
 .biz-card:hover,
-.biz-card:focus-within {
+.biz-card:focus-visible {
   transform: rotate(calc(45deg * var(--i))) translate(var(--radius)) rotate(calc(-45deg * var(--i))) translateY(-4px);
   box-shadow: 0 16px 30px rgba(42,37,36,0.11);
   border-color: var(--accent-color-dark, var(--accent-color));
 }
 
-.biz-card-main:focus-visible,
-.biz-card-case-link:focus-visible {
+.biz-card:focus-visible {
   outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .biz-card:hover .biz-card-icon,
-.biz-card:focus-within .biz-card-icon {
+.biz-card:focus-visible .biz-card-icon {
   transform: scale(1.1);
 }
 
@@ -1430,33 +1415,6 @@ body.modal-open { overflow: hidden; }
 }
 
 .biz-card-more::after { content: " →"; }
-
-.biz-card-case-link {
-  position: absolute;
-  right: 20px;
-  bottom: 17px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 30px;
-  padding: 4px 0;
-  font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  color: var(--accent-color);
-}
-
-.biz-card-case-link::after {
-  content: "→";
-  font-family: var(--font-body);
-  transform: translateY(-1px);
-}
-
-.biz-card-case-link:hover {
-  color: var(--accent-color-dark, var(--accent-color));
-}
 
 /* Click feedback stays outside the card transform so the radial layout remains stable. */
 .biz-card::after {
@@ -1515,13 +1473,8 @@ body.modal-open { overflow: hidden; }
     animation-delay: calc(var(--i) * 80ms);
   }
 
-  .biz-card-main {
-    min-height: 188px;
-    padding: 24px 20px 52px;
-  }
-
   .biz-card:hover,
-  .biz-card:focus-within {
+  .biz-card:focus-visible {
     transform: translateY(-4px) !important;
   }
 
@@ -1539,9 +1492,7 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 420px) {
   .business-diagram { grid-template-columns: 1fr; }
-  .biz-card { min-height: 0; }
-  .biz-card-main { min-height: 170px; padding: 24px 20px 56px; }
-  .biz-card-case-link { right: 20px; bottom: 18px; }
+  .biz-card { min-height: 0; padding: 24px 20px; }
 }
 
 /* ---------- Business modal ---------- */
@@ -1650,6 +1601,31 @@ body.modal-open { overflow: hidden; }
   height: 6px;
   border-radius: 50%;
   background: var(--biz-modal-accent, var(--accent));
+}
+
+.biz-modal-case-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  margin: 26px 0 0 auto;
+  color: var(--biz-modal-accent, var(--accent));
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.biz-modal-case-link::after {
+  content: "→";
+}
+
+.biz-modal-case-link:hover {
+  color: var(--accent-dark);
+}
+
+.biz-modal-case-link:focus-visible {
+  outline: 2px solid var(--biz-modal-accent, var(--accent));
+  outline-offset: 3px;
 }
 
 body.modal-open { overflow: hidden; }
