@@ -7,7 +7,7 @@
    * Notion API, etc.), only fetchBusinessData() needs to change — it just has
    * to keep resolving to an array of items shaped like data/businesses.json.
    */
-  const DATA_URL = 'data/businesses.json?v=20260914-3';
+  const DATA_URL = 'data/businesses.json?v=20260917-1';
 
   const modal = document.getElementById('bizModal');
   const modalDialog = document.getElementById('bizModalDialog');
@@ -37,6 +37,7 @@
   };
 
   const PULSE_DURATION = 700; // ms, matches the bizCardGlow keyframes below
+  const cardById = new Map();
 
   /* ---- Line-icon set: each combines two onsen-inspired motifs, drawn as
    * simple stroked SVG paths so they inherit the card's accent color via
@@ -113,6 +114,7 @@
     card.style.setProperty('--accent-color-rgb', colors.rgb);
     card.setAttribute('aria-haspopup', 'dialog');
     card.setAttribute('aria-label', item.title);
+    card.dataset.businessId = item.id;
 
     const icon = document.createElement('span');
     icon.className = 'biz-card-icon';
@@ -145,8 +147,30 @@
   }
 
   function render(items) {
+    cardById.clear();
     diagram.querySelectorAll('.biz-card').forEach(el => el.remove());
-    items.forEach((item, index) => diagram.appendChild(buildCard(item, index)));
+    items.forEach((item, index) => {
+      const card = buildCard(item, index);
+      cardById.set(item.id, card);
+      diagram.appendChild(card);
+    });
+    openRequestedCase(items);
+  }
+
+  function openRequestedCase(items) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get('case') || params.get('service');
+    if (!requestedId) return;
+
+    const item = items.find(entry => entry.id === requestedId);
+    const card = cardById.get(requestedId);
+    if (!item || !card) return;
+
+    window.requestAnimationFrame(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      pulseCard(card);
+      openModal(item, card);
+    });
   }
 
   /* ---- Modal ---- */

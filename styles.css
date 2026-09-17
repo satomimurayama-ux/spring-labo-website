@@ -1212,6 +1212,43 @@ body.modal-open { overflow: hidden; }
   background: var(--accent);
 }
 
+.accordion-case-link-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+
+.accordion-case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.accordion-case-link::after {
+  content: "→";
+  transition: transform 0.25s ease;
+}
+
+.accordion-case-link:hover,
+.accordion-case-link:focus-visible {
+  color: var(--ink);
+}
+
+.accordion-case-link:hover::after,
+.accordion-case-link:focus-visible::after {
+  transform: translateX(3px);
+}
+
+.accordion-case-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .services-more {
   text-align: center;
   margin-top: 56px;
