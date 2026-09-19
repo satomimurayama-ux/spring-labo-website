@@ -553,57 +553,6 @@ section { position: relative; }
   color: var(--ink);
 }
 
-/* ---------- Expertise ---------- */
-.expertise { padding: 100px 0; background: #fff; }
-
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.expertise-card {
-  background: var(--ivory);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 36px 28px;
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.expertise-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(42,37,36,0.09);
-  border-color: rgba(159,93,85,0.28);
-}
-
-.expertise-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(159,93,85,0.09);
-  font-family: var(--font-label);
-  font-size: var(--fs-subtitle);
-  margin-bottom: 20px;
-}
-
-.expertise-title {
-  font-family: var(--font-heading);
-  font-size: var(--fs-card-title);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.expertise-text {
-  font-size: var(--fs-small);
-  font-weight: 400;
-  color: rgba(43,52,44,0.7);
-  line-height: 1.8;
-}
-
 /* ---------- Achievements / timeline ---------- */
 .achievements { padding: 100px 0; }
 
@@ -948,7 +897,6 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .profile-hero-grid { grid-template-columns: 260px 1fr; gap: 40px; }
-  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
   .media-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -972,9 +920,6 @@ body.modal-open { overflow: hidden; }
   .profile-detail { padding: 40px 0 70px; }
   .profile-detail-grid { grid-template-columns: 1fr; gap: 36px; }
 
-  .expertise { padding: 70px 0; }
-  .expertise-grid { grid-template-columns: 1fr; }
-
   .achievements { padding: 70px 0; }
 
   .media-section { padding: 70px 0 40px; }
@@ -986,7 +931,6 @@ body.modal-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .expertise-card,
   .media-card {
     transition: none;
   }
