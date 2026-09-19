@@ -281,10 +281,13 @@ a { color: inherit; text-decoration: none; }
 
 .hero-eyebrow {
   font-family: var(--font-label);
-  font-size: var(--fs-label);
-  letter-spacing: 0.38em;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.96;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
   margin-bottom: 22px;
 }
 
@@ -2584,6 +2587,11 @@ body.modal-open { overflow: hidden; }
   .hero-title {
     font-size: clamp(2rem, 8vw, 2.75rem);
     line-height: 1.75;
+  }
+
+  .hero-eyebrow {
+    font-size: clamp(0.8125rem, 3.6vw, 0.9375rem);
+    letter-spacing: 0.16em;
   }
 
   .hero-sub { font-size: var(--fs-small); }
