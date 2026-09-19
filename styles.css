@@ -2231,17 +2231,6 @@ body.modal-open { overflow: hidden; }
   transition: box-shadow 0.45s ease;
 }
 
-.pickup-image-yugaku::before {
-  position: absolute;
-  inset: -14px;
-  background: url("images/news-yugaku.jpg") center / cover no-repeat;
-  content: "";
-  filter: blur(12px) brightness(0.82);
-  opacity: 0.72;
-  transform: scale(1.06);
-  transition: opacity 0.45s ease, transform 0.6s ease;
-}
-
 .pickup-image img {
   position: relative;
   z-index: 1;
@@ -2265,12 +2254,6 @@ body.modal-open { overflow: hidden; }
 .pickup-card:hover .pickup-image,
 .pickup-card:focus-visible .pickup-image {
   box-shadow: 0 16px 34px rgba(42, 37, 36, 0.15);
-}
-
-.pickup-card:hover .pickup-image-yugaku::before,
-.pickup-card:focus-visible .pickup-image-yugaku::before {
-  opacity: 0.82;
-  transform: scale(1.1);
 }
 
 .pickup-meta {
