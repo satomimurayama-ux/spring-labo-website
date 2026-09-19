@@ -2050,7 +2050,12 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 768px) {
   .wrap { padding: 0 22px; }
 
-  .logo img { height: 32px; }
+  .header .wrap { padding: 0 14px; gap: 12px; }
+  .logo img { height: 28px; }
+  .header-right { gap: 12px; }
+  .social-icons { gap: 8px; }
+  .social-icons svg { width: 14px; height: 14px; }
+  .menu-btn { width: 24px; }
 
   .nav {
     /* .header has `backdrop-filter` (for the scrolled-state blur), which
