@@ -2417,7 +2417,7 @@ body.modal-open { overflow: hidden; }
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 32px;
-  padding: 28px 0;
+  padding: 28px clamp(40px, 5vw, 48px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -2627,7 +2627,7 @@ body.modal-open { overflow: hidden; }
   .company-table dl > div {
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 24px 0;
+    padding: 24px 20px;
   }
 
   .home-news { padding-top: 68px; }
