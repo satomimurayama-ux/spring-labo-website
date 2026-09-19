@@ -54,4 +54,25 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
+
+  /* ---- Pick up slider ---- */
+  document.querySelectorAll('[data-pickup-slider]').forEach(slider => {
+    const viewport = slider.querySelector('[data-pickup-viewport]');
+    const previous = slider.querySelector('[data-pickup-prev]');
+    const next = slider.querySelector('[data-pickup-next]');
+
+    const getStep = () => {
+      const card = viewport.querySelector('.pickup-card');
+      const track = viewport.querySelector('.pickup-track');
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : viewport.clientWidth * 0.8;
+    };
+
+    previous.addEventListener('click', () => {
+      viewport.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+    next.addEventListener('click', () => {
+      viewport.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+  });
 })();

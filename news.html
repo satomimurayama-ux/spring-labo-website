@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEWS | Spring Labo LLC</title>
+<title>PICK UP | Spring Labo LLC</title>
 <meta name="description" content="スプリングラボ合同会社の最新情報とイベント情報をご紹介します。">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260919-16">
+<link rel="stylesheet" href="styles.css?v=20260919-17">
 </head>
 <body>
 
@@ -54,43 +54,41 @@
 <!-- ---------- Page Hero ---------- -->
 <section class="page-hero news-page-hero">
   <div class="wrap">
-    <h1>NEWS</h1>
+    <h1>PICK UP</h1>
   </div>
 </section>
 
-<!-- ---------- News index ---------- -->
-<main class="news-index-section">
-  <div class="wrap">
-    <div class="news-editorial">
-      <a href="news-yuchelin.html" class="news-featured reveal">
-        <span class="news-featured-image">
-          <img src="images/news-yuchelin.jpg" alt="湯シュラン創設メンバー募集">
-        </span>
-        <span class="news-featured-content">
-          <span class="news-card-meta">
+<!-- ---------- Pick up slider ---------- -->
+<main class="pickup-section">
+  <div class="pickup-slider" data-pickup-slider>
+    <div class="pickup-controls wrap" aria-label="PICK UPスライダー操作">
+      <button class="pickup-arrow pickup-arrow-prev" type="button" aria-label="前の記事へ" data-pickup-prev>←</button>
+      <button class="pickup-arrow pickup-arrow-next" type="button" aria-label="次の記事へ" data-pickup-next>→</button>
+    </div>
+    <div class="pickup-viewport" data-pickup-viewport>
+      <div class="pickup-track">
+        <a href="news-yuchelin.html" class="pickup-card reveal">
+          <span class="pickup-image">
+            <img src="images/news-yuchelin.jpg" alt="湯シュラン創設メンバー募集">
+          </span>
+          <span class="pickup-meta">
             <time datetime="2026-09-19">2026.09.19</time>
             <span>クラウドファンディング</span>
           </span>
-          <span class="news-featured-title">温泉選びの新基準「湯シュラン」を創設したい！</span>
-          <span class="news-card-description">専門家が選んだ「いい温泉」を届ける、新しい温泉評価プロジェクト。創設メンバーを募集します。</span>
-          <span class="news-card-more">詳しく見る</span>
-        </span>
-      </a>
+          <span class="pickup-title">温泉選びの新基準「湯シュラン」を創設したい！</span>
+        </a>
 
-      <a href="news-yugaku.html" class="news-featured reveal">
-        <span class="news-featured-image">
-          <img src="images/news-yugaku.jpg" alt="湯学のスゝメ旅 Vol.1 in 草津温泉" loading="lazy">
-        </span>
-        <span class="news-featured-content">
-          <span class="news-card-meta">
+        <a href="news-yugaku.html" class="pickup-card reveal">
+          <span class="pickup-image">
+            <img src="images/news-yugaku.jpg" alt="湯学のスゝメ旅 Vol.1 in 草津温泉" loading="lazy">
+          </span>
+          <span class="pickup-meta">
             <time datetime="2026-09-15">2026.09.15</time>
             <span>プレスリリース</span>
           </span>
-          <span class="news-featured-title">「湯学のスゝメ旅」スタート</span>
-          <span class="news-card-description">温泉を「見て・学び・感じる」体験型エンタメツアー。第1弾は草津温泉で開催されます。</span>
-          <span class="news-card-more">詳しく見る</span>
-        </span>
-      </a>
+          <span class="pickup-title">「湯学のスゝメ旅」スタート</span>
+        </a>
+      </div>
     </div>
   </div>
 </main>
@@ -119,7 +117,7 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js?v=20260919-2"></script>
 
 </body>
 </html>
