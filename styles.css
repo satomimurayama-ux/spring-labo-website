@@ -2087,14 +2087,18 @@ body.modal-open { overflow: hidden; }
 
 .news-article-visual {
   overflow: hidden;
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 6px;
   margin-bottom: 46px;
 }
 
 .news-article-visual img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
 }
 
 .news-article-body {
