@@ -1919,7 +1919,7 @@ body.modal-open { overflow: hidden; }
 }
 
 .home-news-heading h2 {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 3.2vw, 2.625rem);
   font-weight: 600;
   line-height: 1;
@@ -1980,7 +1980,7 @@ body.modal-open { overflow: hidden; }
 }
 
 .news-page-hero h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 3.2vw, 2.625rem);
   font-weight: 600;
   line-height: 1;
