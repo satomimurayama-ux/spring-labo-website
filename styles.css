@@ -2220,7 +2220,7 @@ body.modal-open { overflow: hidden; }
   flex-direction: column;
   color: var(--ink);
   scroll-snap-align: start;
-  transition: transform 0.45s ease;
+  transition: opacity 0.3s ease, transform 0.45s ease;
 }
 
 .pickup-image {
@@ -2249,6 +2249,7 @@ body.modal-open { overflow: hidden; }
 
 .pickup-card:hover,
 .pickup-card:focus-visible {
+  opacity: 0.72;
   transform: translateY(-5px);
 }
 
