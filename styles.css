@@ -2258,9 +2258,10 @@ body.modal-open { overflow: hidden; }
   display: block;
   margin-top: 5px;
   font-family: var(--font-body);
-  font-size: var(--fs-small);
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.65;
+  text-wrap: balance;
 }
 
 /* ---------- News article ---------- */
@@ -2630,7 +2631,7 @@ body.modal-open { overflow: hidden; }
   }
   .pickup-viewport { scroll-padding-inline-start: 24px; }
   .pickup-meta { margin-top: 10px; font-size: var(--fs-caption); }
-  .pickup-title { margin-top: 5px; font-size: var(--fs-label); line-height: 1.7; }
+  .pickup-title { margin-top: 5px; font-size: 1.5rem; line-height: 1.55; }
   .news-section { padding: 72px 0 100px; }
   .news-article-header { margin-bottom: 30px; }
   .news-article-header h2 { font-size: var(--fs-section-title); }
