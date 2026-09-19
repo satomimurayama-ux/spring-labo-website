@@ -2034,6 +2034,160 @@ body.modal-open { overflow: hidden; }
   letter-spacing: 0;
 }
 
+.news-editorial {
+  border-top: 1px solid rgba(42, 37, 36, 0.58);
+}
+
+.news-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 52px;
+  align-items: center;
+  padding: 38px 0;
+  border-bottom: 1px solid rgba(42, 37, 36, 0.58);
+}
+
+.news-featured-image,
+.news-compact-image {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.news-featured-image {
+  aspect-ratio: 3 / 2;
+}
+
+.news-featured-image img,
+.news-compact-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s ease;
+}
+
+.news-featured-image img {
+  object-fit: contain;
+}
+
+.news-featured-content,
+.news-compact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-bottom: 18px;
+  color: rgba(42, 37, 36, 0.58);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.news-card-meta time {
+  font-variant-numeric: tabular-nums;
+}
+
+.news-card-meta span {
+  color: var(--accent-dark);
+}
+
+.news-featured-title,
+.news-compact-title {
+  display: block;
+  font-family: var(--font-heading);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.news-featured-title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.news-card-description {
+  color: rgba(42, 37, 36, 0.72);
+  font-size: var(--fs-small);
+  line-height: 1.9;
+}
+
+.news-card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+  color: var(--accent-dark);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.news-card-more::after {
+  content: "→";
+  transition: transform 0.25s ease;
+}
+
+.news-compact-list {
+  border-bottom: 1px solid rgba(42, 37, 36, 0.58);
+}
+
+.news-compact-item {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 32px;
+  gap: 28px;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.news-compact-image {
+  aspect-ratio: 4 / 3;
+}
+
+.news-compact-image img {
+  object-fit: cover;
+}
+
+.news-compact-content .news-card-meta {
+  margin-bottom: 10px;
+}
+
+.news-compact-title {
+  font-size: var(--fs-subtitle);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.news-card-arrow {
+  color: var(--accent-dark);
+  font-size: 1.25rem;
+  transition: transform 0.25s ease;
+}
+
+.news-featured:hover .news-featured-image img,
+.news-featured:focus-visible .news-featured-image img,
+.news-compact-item:hover .news-compact-image img,
+.news-compact-item:focus-visible .news-compact-image img {
+  transform: scale(1.025);
+}
+
+.news-featured:hover .news-card-more::after,
+.news-featured:focus-visible .news-card-more::after,
+.news-compact-item:hover .news-card-arrow,
+.news-compact-item:focus-visible .news-card-arrow {
+  transform: translateX(5px);
+}
+
+.news-featured:focus-visible,
+.news-compact-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
 /* ---------- News article ---------- */
 .news-section {
   padding: 96px 0 130px;
@@ -2381,6 +2535,22 @@ body.modal-open { overflow: hidden; }
   .news-list-item { padding: 24px 8px 27px; }
   .news-list-meta { gap: 8px 20px; margin-bottom: 10px; font-size: var(--fs-label); }
   .news-list-title { font-size: var(--fs-body); }
+
+  .news-featured {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 24px 0 30px;
+  }
+  .news-card-meta { gap: 8px 16px; margin-bottom: 12px; font-size: var(--fs-label); }
+  .news-featured-title { font-size: var(--fs-subtitle); margin-bottom: 12px; }
+  .news-card-more { margin-top: 18px; }
+  .news-compact-item {
+    grid-template-columns: 108px minmax(0, 1fr) 22px;
+    gap: 16px;
+    padding: 22px 0;
+  }
+  .news-compact-title { font-size: var(--fs-body); margin-bottom: 0; }
+  .news-compact-content .news-card-description { display: none; }
 
   .news-section { padding: 72px 0 100px; }
   .news-article-header { margin-bottom: 30px; }
