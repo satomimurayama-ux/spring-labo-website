@@ -965,11 +965,12 @@ body.modal-open { overflow: hidden; }
 
 .greeting-wrap .greeting-pledge {
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 8vw, 6rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.6;
+  letter-spacing: 0;
+  white-space: nowrap;
   text-align: center;
-  text-wrap: balance;
   color: var(--ink);
   padding: 44px 0;
   border-top: 1px solid var(--line);
@@ -990,8 +991,8 @@ body.modal-open { overflow: hidden; }
   .greeting-block { padding: 72px 0 40px; }
   .greeting-wrap p { font-size: var(--fs-body); }
   .greeting-wrap .greeting-pledge {
-    font-size: clamp(4rem, 18vw, 5rem);
-    line-height: 1.45;
+    font-size: clamp(1rem, 4.8vw, 1.125rem);
+    line-height: 1.7;
     padding: 38px 0;
   }
 }
