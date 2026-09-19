@@ -7,7 +7,7 @@
    * Notion API, etc.), only fetchBusinessData() needs to change — it just has
    * to keep resolving to an array of items shaped like data/businesses.json.
    */
-  const DATA_URL = 'data/businesses.json?v=20260919-1';
+  const DATA_URL = 'data/businesses.json?v=20260919-2';
 
   const modal = document.getElementById('bizModal');
   const modalDialog = document.getElementById('bizModalDialog');
@@ -17,6 +17,7 @@
   const modalNumber = document.getElementById('bizModalNumber');
   const modalTitle = document.getElementById('bizModalTitle');
   const modalDesc = document.getElementById('bizModalDesc');
+  const modalBody = document.getElementById('bizModalBody');
   const modalDetails = document.getElementById('bizModalDetails');
   const modalCaseLink = document.getElementById('bizModalCaseLink');
 
@@ -183,6 +184,7 @@
     modalNumber.textContent = item.number ? `No.${item.number}` : '';
     modalTitle.textContent = item.title;
     modalDesc.textContent = item.shortDescription;
+    modalBody.textContent = item.description || '';
 
     modalDetails.innerHTML = '';
     (item.details || []).forEach(detail => {
