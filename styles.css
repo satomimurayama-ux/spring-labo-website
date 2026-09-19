@@ -963,12 +963,13 @@ body.modal-open { overflow: hidden; }
 
 .greeting-wrap p:last-child { margin-bottom: 0; }
 
-.greeting-pledge {
+.greeting-wrap .greeting-pledge {
   font-family: var(--font-heading);
-  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.7;
   text-align: center;
+  text-wrap: balance;
   color: var(--ink);
   padding: 44px 0;
   border-top: 1px solid var(--line);
@@ -988,8 +989,8 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 700px) {
   .greeting-block { padding: 72px 0 40px; }
   .greeting-wrap p { font-size: var(--fs-body); }
-  .greeting-pledge {
-    font-size: clamp(1.55rem, 7.2vw, 2rem);
+  .greeting-wrap .greeting-pledge {
+    font-size: clamp(2rem, 9vw, 2.5rem);
     line-height: 1.85;
     padding: 38px 0;
   }
@@ -2290,7 +2291,7 @@ body.modal-open { overflow: hidden; }
   display: block;
   margin-top: 5px;
   font-family: var(--font-body);
-  font-size: 1.75rem;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.65;
   text-wrap: balance;
@@ -2669,7 +2670,7 @@ body.modal-open { overflow: hidden; }
   }
   .pickup-viewport { scroll-padding-inline-start: 24px; }
   .pickup-meta { margin-top: 10px; font-size: var(--fs-caption); }
-  .pickup-title { margin-top: 5px; font-size: 1.5rem; line-height: 1.55; }
+  .pickup-title { margin-top: 5px; font-size: 1rem; line-height: 1.65; }
   .news-section { padding: 72px 0 100px; }
   .news-article-header { margin-bottom: 30px; }
   .news-article-header h2 { font-size: var(--fs-section-title); }
