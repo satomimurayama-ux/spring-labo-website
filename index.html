@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/slide1.jpg?v=20260909-2">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260919-4">
+<link rel="stylesheet" href="styles.css?v=20260919-5">
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="index.html" class="is-current">ホーム</a>
       <a href="greeting.html">代表挨拶</a>
       <a href="business.html">事業内容</a>
+      <a href="news.html">お知らせ</a>
       <a href="media.html">メディア情報</a>
       <a href="https://kitade-onsen.com/" target="_blank" rel="noopener">北出温泉</a>
       <a href="company.html">会社概要</a>
@@ -84,20 +85,30 @@
 </section>
 
 <!-- ---------- News ---------- -->
-<section class="home-news" aria-label="ニュース・お知らせ">
-  <div class="wrap">
-    <a href="news.html" class="home-news-banner reveal">
-      <span class="home-news-image">
-        <img src="images/news-yugaku.jpg" alt="湯学のスゝメ旅 Vol.1 in 草津温泉" loading="lazy">
-      </span>
-      <span class="home-news-content">
-        <span class="home-news-eyebrow">News</span>
-        <time datetime="2026-09-15">2026.09.15</time>
-        <span class="home-news-title">「湯学のスゝメ旅」<br>プレスリリース公開</span>
-        <span class="home-news-description">温泉を「見て・学び・感じる」体験型エンタメツアーが始まります。</span>
-        <span class="home-news-more">詳しく見る</span>
-      </span>
-    </a>
+<section class="home-news" id="news" aria-labelledby="homeNewsTitle">
+  <div class="wrap home-news-layout">
+    <div class="home-news-heading reveal">
+      <p class="section-eyebrow">News</p>
+      <h2 id="homeNewsTitle">お知らせ</h2>
+      <p>取り組みや実績、イベント、メディア情報などをお届けします。</p>
+      <a href="news.html" class="home-news-all">お知らせ一覧</a>
+    </div>
+
+    <div class="home-news-list reveal">
+      <a href="news-yugaku.html" class="home-news-item">
+        <span class="home-news-thumbnail">
+          <img src="images/news-yugaku.jpg" alt="" loading="lazy">
+        </span>
+        <span class="home-news-item-content">
+          <span class="home-news-meta">
+            <time datetime="2026-09-15">2026.09.15</time>
+            <span>プレスリリース</span>
+          </span>
+          <span class="home-news-title">「湯学のスゝメ旅」スタート</span>
+          <span class="home-news-more">詳しく見る</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260919-4">
+<link rel="stylesheet" href="styles.css?v=20260919-5">
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="index.html">ホーム</a>
       <a href="greeting.html">代表挨拶</a>
       <a href="business.html">事業内容</a>
+      <a href="news.html" class="is-current">お知らせ</a>
       <a href="media.html">メディア情報</a>
       <a href="https://kitade-onsen.com/" target="_blank" rel="noopener">北出温泉</a>
       <a href="company.html">会社概要</a>
@@ -58,51 +59,30 @@
   </div>
 </section>
 
-<!-- ---------- News article ---------- -->
-<main class="news-section">
-  <article class="wrap news-article">
-    <header class="news-article-header reveal">
-      <div class="news-article-meta">
-        <time datetime="2026-09-15">2026.09.15</time>
-        <span>プレスリリース</span>
-      </div>
-      <h2>「湯学のスゝメ旅」スタート</h2>
-      <p class="news-article-lead">温泉を「見て・学び・感じる」体験型エンタメツアー。第1弾は草津温泉で開催されます。</p>
-    </header>
-
-    <figure class="news-article-visual reveal">
-      <img src="images/news-yugaku.jpg" alt="湯学のスゝメ旅 Vol.1 in 草津温泉">
-    </figure>
-
-    <div class="news-article-body reveal">
-      <p>ローソントラベル、グランドデザイン株式会社、スプリングラボ合同会社による共創型プロジェクト「温泉ガッチャ! ～湯学のスゝメ～」が始動しました。</p>
-      <p>第1弾の「湯学のスゝメ旅 Vol.1 in 草津温泉」では、温泉家・北出恭子の監修のもと、湯畑でのフィールドワーク、源泉見学、湯守体験、温泉講座、源泉の比較入浴などを通じて、温泉文化を深く体験します。</p>
-
-      <dl class="news-event-facts">
-        <div>
-          <dt>イベント名</dt>
-          <dd>湯学のスゝメ旅 Vol.1 in 草津温泉</dd>
-        </div>
-        <div>
-          <dt>開催日</dt>
-          <dd>2026年11月14日（土）・15日（日）</dd>
-        </div>
-        <div>
-          <dt>開催地</dt>
-          <dd>草津温泉</dd>
-        </div>
-        <div>
-          <dt>監修</dt>
-          <dd>温泉家・北出恭子</dd>
-        </div>
-      </dl>
-
-      <div class="news-actions">
-        <a href="https://prtimes.jp/main/html/rd/p/000000724.000034304.html" class="btn btn-primary" target="_blank" rel="noopener">PR TIMESで読む</a>
-        <a href="https://tour.l-tike.com/package_tour/domestic/event.php?id=1596575" class="btn btn-outline news-tour-link" target="_blank" rel="noopener">ツアー詳細・お申し込み</a>
-      </div>
+<!-- ---------- News index ---------- -->
+<main class="news-index-section">
+  <div class="wrap">
+    <div class="news-index-intro reveal">
+      <p>スプリングラボの取り組みや実績、イベント、メディア出演などの最新情報を掲載します。</p>
     </div>
-  </article>
+
+    <div class="news-index-list">
+      <a href="news-yugaku.html" class="news-index-item reveal">
+        <span class="news-index-thumbnail">
+          <img src="images/news-yugaku.jpg" alt="" loading="lazy">
+        </span>
+        <span class="news-index-content">
+          <span class="news-article-meta">
+            <time datetime="2026-09-15">2026.09.15</time>
+            <span>プレスリリース</span>
+          </span>
+          <span class="news-index-title">「湯学のスゝメ旅」スタート</span>
+          <span class="news-index-description">温泉を「見て・学び・感じる」体験型エンタメツアー。第1弾は草津温泉で開催されます。</span>
+          <span class="news-index-more">記事を読む</span>
+        </span>
+      </a>
+    </div>
+  </div>
 </main>
 
 <!-- ---------- Footer ---------- -->
