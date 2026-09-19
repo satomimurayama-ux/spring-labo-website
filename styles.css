@@ -1184,6 +1184,22 @@ body.modal-open { overflow: hidden; }
   padding-bottom: 26px;
 }
 
+.accordion-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.accordion-desc {
+  max-width: 760px;
+  font-size: var(--fs-small);
+  line-height: 2;
+  color: rgba(43,52,44,0.76);
+  margin-bottom: 18px;
+}
+
 .accordion-panel-inner ul {
   list-style: none;
   border-top: 1px solid var(--line);
