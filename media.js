@@ -42,9 +42,14 @@
   }
 
   function formatDate(iso) {
+    if (!iso) return '';
     const d = new Date(iso + 'T00:00:00');
     if (isNaN(d.getTime())) return iso;
     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  }
+
+  function getDateLabel(item) {
+    return item.dateLabel || formatDate(item.date);
   }
 
   function getFilteredItems() {
@@ -83,7 +88,7 @@
     meta.className = 'media-card-meta';
     const dateEl = document.createElement('span');
     dateEl.className = 'media-card-date';
-    dateEl.textContent = formatDate(item.date);
+    dateEl.textContent = getDateLabel(item);
     const categoryEl = document.createElement('span');
     categoryEl.className = 'media-card-category';
     categoryEl.textContent = item.category || '';
@@ -165,7 +170,7 @@
       modalImage.classList.add('media-modal-image--placeholder');
     }
 
-    modalMeta.textContent = `${formatDate(item.date)}　${item.category || ''}　${item.media || ''}`;
+    modalMeta.textContent = [getDateLabel(item), item.category, item.media].filter(Boolean).join('　');
     modalTitle.textContent = item.title || '';
     modalSummary.textContent = item.summary || '';
 
@@ -216,7 +221,11 @@
 
   /* ---- Init ---- */
   fetchMediaData().then(data => {
-    allItems = data.slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+    allItems = data.slice().sort((a, b) => {
+      const aDate = a.sortDate || a.date || '';
+      const bDate = b.sortDate || b.date || '';
+      return aDate < bDate ? 1 : -1;
+    });
     render();
   });
 })();
