@@ -65,42 +65,58 @@
     <div class="section-head reveal">
       <p class="section-eyebrow">Business Cases</p>
       <h2 class="section-title">カテゴリー別の支援事例</h2>
-      <p class="section-desc">各カテゴリーの事例紹介は、現在準備中です。</p>
+      <p class="section-desc">温泉資源の調査から地域プロデュース、商品開発、文化発信まで、主な支援実績をご紹介します。</p>
     </div>
 
     <div class="case-list">
       <article class="case-card reveal" id="water-quality">
         <p class="case-number">01</p>
         <h2>温泉資源調査・泉質評価</h2>
-        <p>現在準備中です。内容は後日追加いたします。</p>
+        <ul>
+          <li>全国知事会『ユネスコ無形文化遺産“温泉文化”登録に向けた調査報告事業』アドバイザー</li>
+          <li>環境省『温泉地の多言語化促進マニュアル』監修</li>
+          <li>熊本県水俣市『湯の児・湯の鶴温泉パンフレット』監修</li>
+        </ul>
         <a href="business.html" class="case-back-link">事業内容へ戻る</a>
       </article>
 
       <article class="case-card reveal" id="revitalization">
         <p class="case-number">02</p>
         <h2>温泉地ブランディング・地域プロデュース</h2>
-        <p>現在準備中です。内容は後日追加いたします。</p>
+        <ul>
+          <li>山口県『オフ泉県やまぐち』総合プロデューサー</li>
+          <li>新潟県西蒲区『にしかん・やひこ遊・誘・湯めぐりプロジェクト』監修</li>
+          <li>島根県『美肌観光事業』アドバイザー</li>
+        </ul>
         <a href="business.html" class="case-back-link">事業内容へ戻る</a>
       </article>
 
       <article class="case-card reveal" id="bathhouse">
         <p class="case-number">03</p>
         <h2>温浴施設・浴場プロデュース</h2>
-        <p>現在準備中です。内容は後日追加いたします。</p>
+        <p>ホテルや温浴施設などのプロデュースを手掛けています。守秘義務のため、個別の事例は非公開としています。</p>
         <a href="business.html" class="case-back-link">事業内容へ戻る</a>
       </article>
 
       <article class="case-card reveal" id="product">
         <p class="case-number">04</p>
         <h2>温泉プロダクト・コンテンツ開発</h2>
-        <p>現在準備中です。内容は後日追加いたします。</p>
+        <ul>
+          <li>温泉化粧品『KOSHIKA』監修</li>
+          <li>祭時温泉かみくら『KAMIKURA BATH EESSENCE』監修</li>
+          <li>『最上級の温泉タオル』監修</li>
+        </ul>
         <a href="business.html" class="case-back-link">事業内容へ戻る</a>
       </article>
 
       <article class="case-card reveal" id="seminar">
         <p class="case-number">05</p>
         <h2>温泉文化発信・人材育成・事業者支援</h2>
-        <p>現在準備中です。内容は後日追加いたします。</p>
+        <ul>
+          <li>静岡県『第1回ICOIフォーラム』基調講演</li>
+          <li>長野県白馬村『温泉シンポジウム』基調講演</li>
+          <li>国際ウェルネスツーリズムEXPO2025『ウェルネスツーリズムセミナー』講師</li>
+        </ul>
         <a href="business.html" class="case-back-link">事業内容へ戻る</a>
       </article>
     </div>
@@ -152,7 +168,7 @@
       sectionTitle.textContent = selectedCard ? selectedCard.querySelector('h2').textContent : defaultTitle;
     }
     if (sectionDesc) {
-      sectionDesc.textContent = selectedCard ? 'このカテゴリーの事例紹介は、現在準備中です。' : defaultDesc;
+      sectionDesc.textContent = selectedCard ? '主な支援実績をご紹介します。' : defaultDesc;
     }
   }
 
