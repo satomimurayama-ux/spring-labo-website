@@ -37,7 +37,6 @@
     coral: { base: '#9f5d55', dark: '#7d4640', rgb: '159,93,85' }
   };
 
-  const PULSE_DURATION = 700; // ms, matches the bizCardGlow keyframes below
   const cardById = new Map();
 
   /* ---- Line-icon set: each combines two onsen-inspired motifs, drawn as
@@ -117,34 +116,33 @@
     card.setAttribute('aria-label', item.title);
     card.dataset.businessId = item.id;
 
+    const header = document.createElement('span');
+    header.className = 'biz-card-header';
+
+    const number = document.createElement('span');
+    number.className = 'biz-card-number';
+    number.textContent = item.number || String(index + 1).padStart(2, '0');
+
     const icon = document.createElement('span');
     icon.className = 'biz-card-icon';
     icon.innerHTML = svgIcon(item.icon);
+    header.append(number, icon);
 
     const title = document.createElement('span');
     title.className = 'biz-card-title';
     title.textContent = item.title;
 
+    const description = document.createElement('span');
+    description.className = 'biz-card-description';
+    description.textContent = item.shortDescription || '';
+
     const more = document.createElement('span');
     more.className = 'biz-card-more';
     more.textContent = '詳しく見る';
 
-    card.append(icon, title, more);
-    card.addEventListener('click', () => {
-      pulseCard(card);
-      openModal(item, card);
-    });
+    card.append(header, title, description, more);
+    card.addEventListener('click', () => openModal(item, card));
     return card;
-  }
-
-  /* ---- Soft glow pulse on click ---- */
-  function pulseCard(card) {
-    card.classList.remove('is-pulsing');
-    // Force a reflow so re-adding the class restarts the animation
-    // even if the same card is clicked again in quick succession.
-    void card.offsetWidth;
-    card.classList.add('is-pulsing');
-    setTimeout(() => card.classList.remove('is-pulsing'), PULSE_DURATION);
   }
 
   function render(items) {
@@ -169,7 +167,6 @@
 
     window.requestAnimationFrame(() => {
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      pulseCard(card);
       openModal(item, card);
     });
   }
