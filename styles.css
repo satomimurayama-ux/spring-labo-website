@@ -1154,6 +1154,14 @@ section { position: relative; }
   max-width: 620px;
 }
 
+@media (min-width: 1024px) {
+  .business-hub-center { width: min(960px, 100%); }
+  .business-hub-desc {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 /* Shared body-copy typography for the business page (hub blurb + modal
  * description + modal detail list) so size/weight/color live in one place. */
 .business-hub-desc,
