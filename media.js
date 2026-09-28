@@ -15,19 +15,9 @@
   const loadMoreBtn = document.getElementById('mediaLoadMoreBtn');
   const filtersEl = document.getElementById('mediaFilters');
 
-  const modal = document.getElementById('mediaModal');
-  const modalBackdrop = document.getElementById('mediaModalBackdrop');
-  const modalClose = document.getElementById('mediaModalClose');
-  const modalImage = document.getElementById('mediaModalImage');
-  const modalMeta = document.getElementById('mediaModalMeta');
-  const modalTitle = document.getElementById('mediaModalTitle');
-  const modalSummary = document.getElementById('mediaModalSummary');
-  const modalLink = document.getElementById('mediaModalLink');
-
   let allItems = [];
   let currentCategory = 'all';
   let visibleCount = PAGE_SIZE;
-  let lastFocusedEl = null;
 
   async function fetchMediaData() {
     try {
@@ -59,10 +49,8 @@
   }
 
   function buildCard(item) {
-    const card = document.createElement('button');
-    card.type = 'button';
+    const card = document.createElement('article');
     card.className = 'media-card';
-    card.setAttribute('aria-haspopup', 'dialog');
 
     const thumb = document.createElement('span');
     thumb.className = 'media-card-thumb';
@@ -106,14 +94,8 @@
     summaryEl.className = 'media-card-summary';
     summaryEl.textContent = item.summary || '';
 
-    const linkEl = document.createElement('span');
-    linkEl.className = 'media-card-more';
-    linkEl.textContent = '詳細を見る';
-
-    body.append(meta, mediaEl, titleEl, summaryEl, linkEl);
+    body.append(meta, mediaEl, titleEl, summaryEl);
     card.appendChild(body);
-
-    card.addEventListener('click', () => openModal(item, card));
 
     return card;
   }
@@ -150,74 +132,6 @@
     visibleCount += PAGE_SIZE;
     render();
   });
-
-  /* ---- Modal ---- */
-  function openModal(item, triggerEl) {
-    lastFocusedEl = triggerEl;
-
-    modalImage.innerHTML = '';
-    if (item.thumbnail) {
-      const img = document.createElement('img');
-      img.src = item.thumbnail;
-      img.alt = '';
-      img.addEventListener('error', () => {
-        img.remove();
-        modalImage.classList.add('media-modal-image--placeholder');
-      });
-      modalImage.appendChild(img);
-      modalImage.classList.remove('media-modal-image--placeholder');
-    } else {
-      modalImage.classList.add('media-modal-image--placeholder');
-    }
-
-    modalMeta.textContent = [getDateLabel(item), item.category, item.media].filter(Boolean).join('　');
-    modalTitle.textContent = item.title || '';
-    modalSummary.textContent = item.summary || '';
-
-    if (item.link && item.link !== '#') {
-      modalLink.href = item.link;
-      modalLink.hidden = false;
-    } else {
-      modalLink.hidden = true;
-    }
-
-    modal.hidden = false;
-    document.body.classList.add('modal-open');
-    modalClose.focus();
-
-    document.addEventListener('keydown', onModalKeydown);
-  }
-
-  function closeModal() {
-    modal.hidden = true;
-    document.body.classList.remove('modal-open');
-    document.removeEventListener('keydown', onModalKeydown);
-    if (lastFocusedEl) lastFocusedEl.focus();
-  }
-
-  function onModalKeydown(e) {
-    if (e.key === 'Escape') {
-      closeModal();
-      return;
-    }
-    if (e.key !== 'Tab') return;
-
-    const focusable = modal.querySelectorAll('a[href]:not([hidden]), button:not([hidden])');
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  }
-
-  modalClose.addEventListener('click', closeModal);
-  modalBackdrop.addEventListener('click', closeModal);
 
   /* ---- Init ---- */
   fetchMediaData().then(data => {
