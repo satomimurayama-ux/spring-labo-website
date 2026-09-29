@@ -604,6 +604,11 @@ section { position: relative; }
 /* ---------- Media appearances ---------- */
 .media-section { padding: 100px 0 60px; background: #fff; }
 
+@media (min-width: 1024px) {
+  .media-section .section-head { max-width: 1120px; }
+  .media-section .section-desc { white-space: nowrap; }
+}
+
 .media-filters {
   display: flex;
   flex-wrap: wrap;
