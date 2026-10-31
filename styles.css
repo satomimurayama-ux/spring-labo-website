@@ -1552,6 +1552,26 @@ body.modal-open { overflow: hidden; }
   color: var(--accent);
 }
 
+.case-document-image {
+  display: block;
+  width: min(240px, 100%);
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.case-document-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.case-document-image:hover,
+.case-document-image:focus-visible {
+  opacity: 0.8;
+}
+
 .case-back-link {
   display: inline-flex;
   align-items: center;
