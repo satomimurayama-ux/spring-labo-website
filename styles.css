@@ -1579,6 +1579,10 @@ body.modal-open { overflow: hidden; }
   margin: 16px 0 12px;
 }
 
+.case-photo-gallery-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .case-photo-gallery-single {
   grid-template-columns: 1fr;
   max-width: 480px;
