@@ -1572,6 +1572,37 @@ body.modal-open { overflow: hidden; }
   opacity: 0.8;
 }
 
+.case-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 12px;
+}
+
+.case-photo-gallery-single {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+
+.case-photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.case-photo-gallery a:hover,
+.case-photo-gallery a:focus-visible {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .case-photo-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 .case-back-link {
   display: inline-flex;
   align-items: center;
