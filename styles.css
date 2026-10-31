@@ -1541,6 +1541,17 @@ body.modal-open { overflow: hidden; }
   background: var(--accent);
 }
 
+.case-reference-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.case-reference-link:hover,
+.case-reference-link:focus-visible {
+  color: var(--accent);
+}
+
 .case-back-link {
   display: inline-flex;
   align-items: center;
