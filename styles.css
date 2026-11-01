@@ -2580,3 +2580,12 @@ body.modal-open { overflow: hidden; }
   .news-actions { flex-direction: column; }
   .news-actions .btn { width: 100%; text-align: center; }
 }
+
+/* Yuchelin award announcement */
+.pickup-image-award {
+  background: #f4ede2;
+}
+
+.pickup-image-award img {
+  object-fit: contain;
+}
