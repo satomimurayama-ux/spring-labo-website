@@ -2589,3 +2589,24 @@ body.modal-open { overflow: hidden; }
 .pickup-image-award img {
   object-fit: contain;
 }
+
+.news-related-links {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.news-related-links a {
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.8;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.news-related-links a:hover,
+.news-related-links a:focus-visible {
+  color: var(--accent-dark);
+}
